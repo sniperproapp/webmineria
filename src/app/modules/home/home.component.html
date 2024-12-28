@@ -1,0 +1,166 @@
+<app-header></app-header>
+
+
+
+
+
+
+  <main class="rbt-main-wrapper"  >
+      <!-- Start Banner Area -->
+          
+      <div   > 
+        <img   class="familia1" src="assets/images/banner/banner-01.jpg" alt="Education Images">
+
+             
+      </div>
+      <!-- End Banner Area -->
+
+      
+ 
+      <div class="rbt-counterup-area "  style="background-image: url('assets/images/material/fpromomes.jpg');  background-repeat: no-repeat;background-size: cover; " *ngIf="DESCUENTOFLASH && !user "  >
+          <div class="conter-style-2">
+              <div class="container">
+                  <div class="row g-5 align-items-center">
+                      <div class="col-lg-6 order-2 order-lg-1">
+                          <div class="section-title text-start">
+                              <span class="subtitle bg-pink-opacity">Descuento</span>
+                              
+                              <img   src="assets/images/material/TEXTOPROMODELMES.png" alt="Education Images">                             
+                              <h2 class="title "  style="color:  white;" *ngIf="DESCUENTOFLASH.type_discount==1">  {{DESCUENTOFLASH.discount}}%  !</h2>
+                              <h2 class="title" style="color:  white;" *ngIf="DESCUENTOFLASH.type_discount==2"> {{DESCUENTOFLASH.discount}}USD  </h2>
+                              <p class="description has-medium-font-size mt--20 mb--0">Tiempo limitado del {{DESCUENTOFLASH.start_datenew}} a {{DESCUENTOFLASH.end_datenew}}.</p>
+                          </div>
+                          <div class="countdown-style-1 mt--50 d-flex justify-content-center">
+                              <div class="countdown" [attr.data-date]="DESCUENTOFLASH.end_dateclok" style="">
+                                  <div class="countdown-container days">
+                                      <span class="countdown-value">87</span>
+                                      <span class="countdown-heading">Days</span>
+                                  </div>
+                                  <div class="countdown-container hours">
+                                      <span class="countdown-value">23</span>
+                                      <span class="countdown-heading">Hours</span>
+                                  </div>
+                                  <div class="countdown-container minutes">
+                                      <span class="countdown-value">38</span>
+                                      <span class="countdown-heading">Minutes</span>
+                                  </div>
+                                  <div class="countdown-container seconds">
+                                      <span class="countdown-value">27</span>
+                                      <span class="countdown-heading">Seconds</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 order-1 order-lg-2" >
+                          <div class="row">
+
+                            <div class="banner-card pb--60 mb--50 swiper rbt-dot-bottom-center banner-swiper-active" *ngIf="CURSOSBANERS">
+                                <div class="swiper-wrapper">
+                                  <ng-container *ngFor="let CURSOSBANER of CURSOSBANERS">
+  
+                                              <!-- Start Single Card  -->
+                                              <div class="swiper-slide" >
+                                                  <div class="rbt-card variation-01 rbt-hover" style="background-color: rgb(16, 0, 62);  background-repeat: no-repeat;background-size: cover; ">
+                                                      <div class="rbt-card-img">
+                                                          <a [routerLink]="['landing-mensualidad/',CURSOSBANER.id]">
+                                                              <img [src]="CURSOSBANER.imagen" alt="Card image">
+                                                              <div class="rbt-badge-3 bg-white" >
+                                                                  <span *ngIf="DESCUENTOBANERS.type_discount==1">-{{DESCUENTOBANERS.discount}}%</span>
+                                                                  <span *ngIf="DESCUENTOBANERS.type_discount==2">-{{DESCUENTOBANERS.discount}}USD</span>
+                                                                  <span>Off</span>
+                                                              </div>
+                                                          </a>
+                                                      </div>
+                                                      <div class="rbt-card-body">
+                                                          <ul class="rbt-meta">
+                                                              <li><i class="feather-book"></i>{{CURSOSBANER.num_clases}}Lessons</li>
+                                                              <li><i class="feather-users"></i>{{CURSOSBANER.n_students}} Students</li>
+                                                          </ul>
+                                                          <h4 class="rbt-card-title"><a [routerLink]="['landing-mensualidad/',CURSOSBANER.id]">{{CURSOSBANER.title}}</a>
+                                                          </h4>
+                                                          <p class="rbt-card-text">{{CURSOSBANER.subtitle}}</p>
+                                                          <div class="rbt-review">
+                                                              <div class="rating">
+                                                                  <i class="fas fa-star" [ngClass]="{'rating': CURSOSBANER.avg_rating < 1}"></i>
+                                                                  <i class="fas fa-star" [ngClass]="{'rating': CURSOSBANER.avg_rating < 2}"></i>
+                                                                  <i class="fas fa-star" [ngClass]="{'rating': CURSOSBANER.avg_rating < 3}"></i>
+                                                                  <i class="fas fa-star" [ngClass]="{'rating': CURSOSBANER.avg_rating < 4}"></i>
+                                                                  <i class="fas fa-star" [ngClass]="{'rating': CURSOSBANER.avg_rating < 5}"></i>
+                                                              </div>
+                                                              <span class="rating-count"> {{CURSOSBANER.num_review}}Reviews</span>
+                                                          </div>
+                                                          <div class="rbt-card-bottom">
+                                                              <div class="rbt-price">
+                                                                   
+                                                                  <span class="current-price">{{getpricebaner(CURSOSBANER)}}USD</span>
+                                                                  <span class="off-price">{{CURSOSBANER.price_usd}}USD</span>
+                                                              </div>
+                                                              <a class="rbt-btn-link left-icon" (click)="addCart(CURSOSBANER,DESCUENTOBANERS)" href="#" onclick="return false;"><i class="feather-shopping-cart"></i> Add To Cart</a>
+                                                                     
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <!-- End Single Card  -->
+  
+                                  </ng-container>
+                                    
+  
+                                   
+                                </div>
+                                <div class="rbt-swiper-pagination"></div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+ 
+      <div class="familia">
+           
+        
+                    
+    </div>
+
+      <!-- Start About Area  -->
+      <div class="familia">
+           
+             
+                          
+    </div>
+        
+     
+      <div class="familia">
+           
+
+           
+      </div>
+      
+      
+
+      <div class="familia">
+           
+        
+           
+      </div>
+      
+ 
+       
+
+      <div class="familia">
+           
+        
+           
+      </div>   
+<app-footer></app-footer>
+
+  </main>
+
+  <!-- End Page Wrapper Area -->
+  <div class="rbt-progress-parent">
+      <svg class="rbt-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
+          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+  </div>

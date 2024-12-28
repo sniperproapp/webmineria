@@ -1,0 +1,314 @@
+<!-- Start Header Area -->
+
+<header class="rbt-header rbt-header-10" >
+    <div class="rbt-sticky-placeholder"></div>
+    <!-- Start Header Top  -->
+
+    <!-- End Header Top  -->
+    <div class="rbt-header-wrapper header-space-betwween header-sticky" style="  background: linear-gradient(to right, rgb(44, 5, 242), rgb(134, 3, 115));">
+        <div class="container-fluid">
+            <div class="mainbar-row rbt-navigation-center align-items-center">
+                <div class="header-left rbt-header-content">
+                    <div class="header-info">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="assets/images/logo/logo.png" alt="Education Logo Images">
+                            </a>
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+  
+
+
+                
+
+
+               
+                <div class="header-right">
+  
+                    <!-- Navbar Icons -->
+                    <ul class="quick-access">
+                        <li class="account-access rbt-user-wrapper d-none d-xl-block">
+                            <a href="/perfil-del-estudiante" *ngIf="user"><i class="feather-user" ></i>{{ user.name + ' ' +(user.surname ? user.surname : '') }}</a>
+                            <a href="/auth/login"  *ngIf="!user"><i class="feather-user"></i>Ingresa</a>
+                            <div class="rbt-user-menu-list-wrapper" *ngIf="user"  >
+                                <div class="inner">
+                                    <div class="rbt-admin-profile">
+                                        <div class="admin-thumbnail">
+                                            <img [src]="user.imagen" alt="User Images">
+                                        </div>
+                                        <div class="admin-info">
+                                            <span class="name">{{user.name}}</span>
+                                            <a class="rbt-btn-link color-primary" routerLink="/perfil-del-estudiante">View Profile</a>
+                                        </div>
+                                    </div>
+                                    
+                                     
+                                    <hr class="mt--10 mb--10">
+                                    <ul class="user-list-wrapper">
+                                        <li>
+                                            <a href="/perfil-del-estudiante">
+                                                <i class="feather-book"></i>
+                                                <span>Billetera</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/perfil-del-estudiante">
+                                                <i class="feather-settings"></i>
+                                                <span>Settings</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="return false;" (click)="logout()">
+                                                <i class="feather-log-out"></i>
+                                                <span>Logout</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+  
+                        <li class="access-icon">
+                            
+                                
+                                    <a class="rbt-btn   marquee-auto   radius-round btn-sm  " href="/auth/login">
+                                        <span data-text="BIENVENIDO" *ngIf="user">0.00</span>
+                                        <span data-text="REGISTRATE" *ngIf="!user">REGISTRATE</span> </a>
+                                
+                      
+                              
+                             
+                        </li>
+                        <li class="access-icon">
+                             
+                        </li>
+  
+                        <li class="access-icon rbt-mini-cart">
+                            <a class="rbt-cart-sidenav-activation rbt-round-btn" href="#" onclick="return false;">
+                                <i class="feather-shopping-cart"></i>
+                                <span class="rbt-cart-count">{{ CARTS.length }}</span>
+                            </a>
+                        </li>
+  
+                        
+                        <li class="access-icon rbt-user-wrapper d-block d-xl-none">
+
+
+
+
+                            <a class="rbt-round-btn" href="/auth/login" *ngIf="!user" ><i class="feather-user"></i></a>
+                            <a class="rbt-round-btn" href="#" *ngIf="user"><i class="feather-user"></i></a>
+                           
+                            <div class="rbt-user-menu-list-wrapper"  *ngIf="user"  >
+                                <div class="inner">
+                                    <div class="rbt-admin-profile">
+                                        <div class="admin-thumbnail">
+                                            <img [src]="user.imagen" alt="User Images">
+                                        </div>
+                                        <div class="admin-info">
+                                            <span class="name">{{user.name}}</span>
+                                            <a class="rbt-btn-link color-primary" href="/perfil-del-estudiante">View Profile</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <hr class="mt--10 mb--10">
+                                    <ul class="user-list-wrapper">
+                                        <li>
+                                            <a href="/perfil-del-estudiante">
+                                                <i class="feather-book"></i>
+                                                <span>Billetera</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/perfil-del-estudiante">
+                                                <i class="feather-settings"></i>
+                                                <span>Settings</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="return false;" (click)="logout()">
+                                                <i class="feather-log-out"></i>
+                                                <span>Logout</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+  
+                    </ul>
+  
+                   
+  
+                    <!-- Start Mobile-Menu-Bar -->
+                     
+                </div>
+            </div>
+        </div>
+        <!-- Start Search Dropdown  -->
+        
+    </div>
+    
+    <a class="rbt-close_side_menu" href="javascript:void(0);"></a>
+  </header>
+  <!-- Mobile Menu Section -->
+  <div class="popup-mobile-menu">
+    <div class="inner-wrapper">
+        
+  
+        <nav class="mainmenu-nav">
+            <ul class="mainmenu">
+                <li class="  position-static">
+                    <a href="#">Home <i  ></i></a>
+                   
+                </li>
+
+                <li class="position-static ">
+                    <a href="filtros-de-cursos">Productos  </a>
+                    
+                </li>
+
+                <li class="position-static" *ngIf="user">
+                    <a href="perfil-del-estudiante">Dashboard
+                        
+                    </a>
+                    
+                </li>
+
+                <li class="  position-static">
+                    <a href="somos">¿Quienes somos?</a>
+                    
+                </li>
+               
+                
+
+                <li class="  position-static">
+                    <a href="contactos">Contactos  </a>
+                    
+                </li>
+  
+                <!-- <li class="  position-static">
+                    <a href="#">Blog 
+                        <i class="feather-chevron-down"></i> 
+                    </a> -->
+                    <!-- Start Mega Menu  -->
+                    <!-- <div class="rbt-megamenu grid-item-3">
+                        <div class="wrapper">
+                            <div class="row row--15">
+                                <div class="col-lg-12 col-xl-4 col-xxl-4 single-mega-item">
+                                    <h3 class="rbt-short-title">Blog Styles</h3>
+                                    <ul class="mega-menu-item">
+                                        <li><a href="blog-list.html">Blog List</a></li>
+                                        <li><a href="blog.html">Blog Grid</a></li>
+                                        <li><a href="blog-grid-minimal.html">Blog Grid Minimal</a></li>
+                                        <li><a href="blog-with-sidebar.html">Blog With Sidebar</a></li>
+                                        <li><a href="blog-details.html">Blog Details</a></li>
+                                        <li><a href="post-format-standard.html">Post Format Standard</a></li>
+                                        <li><a href="post-format-gallery.html">Post Format Gallery</a></li>
+                                    </ul>
+                                </div>
+  
+                                <div class="col-lg-12 col-xl-4 col-xxl-4 single-mega-item">
+                                    <h3 class="rbt-short-title">Get Started</h3>
+                                    <ul class="mega-menu-item">
+                                        <li><a href="post-format-quote.html">Post Format Quote</a></li>
+                                        <li><a href="post-format-audio.html">Post Format Audio</a></li>
+                                        <li><a href="post-format-video.html">Post Format Video</a></li>
+                                        <li><a href="#">Media Under Title <span class="rbt-badge-card">Coming</span></a></li>
+                                        <li><a href="#">Sticky Sidebar <span class="rbt-badge-card">Coming</span></a></li>
+                                        <li><a href="#">Auto Masonry <span class="rbt-badge-card">Coming</span></a></li>
+                                        <li><a href="#">Meta Overlaid <span class="rbt-badge-card">Coming</span></a></li>
+                                    </ul>
+                                </div>
+  
+                                <div class="col-lg-12 col-xl-4 col-xxl-4 single-mega-item">
+                                    <div class="rbt-ads-wrapper">
+                                        <a class="d-block" href="#"><img src="assets/images/service/mobile-cat.jpg" alt="Education Images"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- End Mega Menu  -->
+                <!-- </li> -->
+            </ul>
+        </nav>
+  
+    
+  
+    </div>
+  </div>
+  <!-- Start Side Vav -->
+  <div class="rbt-cart-side-menu">
+    <div class="inner-wrapper">
+        <div class="inner-top">
+            <div class="content">
+                <div class="title">
+                    <h4 class="title mb--0">Your shopping cart</h4>
+                </div>
+                <div class="rbt-btn-close" id="btn_sideNavClose">
+                    <button class="minicart-close-button rbt-round-btn"><i class="feather-x"></i></button>
+                </div>
+            </div>
+        </div>
+        <nav class="side-nav w-100">
+            <ul class="rbt-minicart-wrapper">
+
+                <ng-container *ngFor="let CART of CARTS">
+                    <li class="minicart-item">
+                        <div class="thumbnail">
+                            <a href="#">
+                                <img [src]="CART.curso.imagen" alt="Product Images">
+                            </a>
+                        </div>
+                        <div class="product-content">
+                            <h6 class="title"><a [routerLink]="['landing-curso/',CART.curso.slug]">{{ CART.curso.title }}</a></h6>
+      
+                            <span class="quantity">1 * <span class="price">${{ CART.total }}</span></span>
+                        </div>
+                        <div class="close-btn">
+                            <button class="rbt-round-btn" (click)="removeItem(CART)"><i class="feather-x"></i></button>
+                        </div>
+                    </li>
+                </ng-container>
+  
+                
+            </ul>
+        </nav>
+  
+        <div class="rbt-minicart-footer">
+            <hr class="mb--0">
+            <div class="rbt-cart-subttotal">
+                <p class="subtotal"><strong>Subtotal:</strong></p>
+                <p class="price">${{ SUM_TOTAL }}</p>
+            </div>
+            <hr class="mb--0">
+            <div class="rbt-minicart-bottom mt--20">
+                <div class="view-cart-btn" *ngIf="user ">
+                    <a class="rbt-btn btn-border icon-hover w-100 text-center" href="/carrito-de-compra">
+                        <span class="btn-text">View Cart</span>
+                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                    </a>
+                </div>
+                <div class="view-cart-btn" *ngIf="!user ">
+                    <a class="rbt-btn btn-border icon-hover w-100 text-center" href="/mensualidad">
+                        <span class="btn-text">View Cart</span>
+                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                    </a>
+                </div>
+                <div class="checkout-btn mt--20">
+                    <a class="rbt-btn btn-gradient icon-hover w-100 text-center" href="#">
+                        <span class="btn-text">Checkout</span>
+                        <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+  
+    </div>
+  </div>
+  <!-- End Side Vav -->
+  <a class="close_side_menu" href="javascript:void(0);"></a>
